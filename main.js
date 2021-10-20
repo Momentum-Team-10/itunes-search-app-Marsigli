@@ -7,6 +7,8 @@ const form = document.getElementById('song-form')
 
 const input = document.getElementById('song-field')
 
+const songCards = document.getElementById('song-cards')
+
 
 form.addEventListener('submit', (e) => {
     e.preventDefault()
@@ -19,12 +21,13 @@ form.addEventListener('submit', (e) => {
             for (let song of songs) {
                 let artistCard = document.createElement('div')
                 artistCard.className = 'artist-card'
-                root.appendChild(artistCard)   
+                songCards.appendChild(artistCard)   
                 artistCard.innerHTML = `
                 <img src='${song.artworkUrl100}'></img>
                 <h1>${song.artistName}</h1>
+                <p>${song.collectionName}</p>
+                <p>${song.trackName}</p>
                 <audio controls src='${song.previewUrl}'></audio>
-                
                 ` 
             }
         })

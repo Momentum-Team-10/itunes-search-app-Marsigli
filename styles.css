@@ -1,3 +1,46 @@
-.artist-name {
-    color: red
+#header {
+    font-size: 65px;
+    text-align: center;
+    color: seashell;
+}
+
+#song-form {
+    margin: 5px 5px;
+}
+
+#song-cards {
+    display: grid;
+    flex-direction: 1fr 1fr 1fr;
+}
+
+.artist-card {
+    margin: 25px;
+    background-color: seashell;
+    max-width: 350px;
+    text-align: center;
+    align-content: center;
+    border-radius: 15px;
+}
+
+img {
+    margin-top: 10px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 40%;
+}
+
+audio {
+    display: block;
+    margin: auto;
+    margin-bottom: 5px;
+}
+
+#song-form {
+    padding-top: 15px;
+    text-align: center;
+}
+
+body {
+    background-image: url(music-background_53876-90526.jpeg)!important;
 }
