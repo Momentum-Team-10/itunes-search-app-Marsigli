@@ -9,7 +9,6 @@ const input = document.getElementById('song-field')
 
 const songCards = document.getElementById('song-cards')
 
-// const artistCard.appendChild(root)
 
 form.addEventListener('submit', (e) => {
     e.preventDefault()
@@ -20,17 +19,22 @@ form.addEventListener('submit', (e) => {
         .then((data) => {
             console.log(data)
             const songs = data.results
-            for (let song of songs) {
-                let artistCard = document.createElement('div')
-                artistCard.className = 'artist-card'
-                songCards.appendChild(artistCard)   
-                artistCard.innerHTML = `
-                <img src='${song.artworkUrl100}'></img>
-                <h1>${song.artistName}</h1>
-                <p>${song.collectionName}</p>
-                <p>${song.trackName}</p>
-                <audio controls src='${song.previewUrl}'></audio>
-                `
+            if (songs <= 0) {
+                alert('Returned zero results')
+            } else {                
+                for (let song of songs) {
+                    let artistCard = document.createElement('div')
+                    artistCard.className = 'artist-card'
+                    songCards.appendChild(artistCard)   
+                    artistCard.innerHTML = `
+                    <img src='${song.artworkUrl100}'></img>
+                    <h1>${song.artistName}</h1>
+                    <p><strong> Album:  </strong>${song.collectionName}</p>
+                    <p><strong>Track: </strong>${song.trackName}</p>
+                    <audio controls src='${song.previewUrl}'></audio>
+                    `    
+            }
+            
             }
         })
 })
