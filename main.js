@@ -9,9 +9,11 @@ const input = document.getElementById('song-field')
 
 const songCards = document.getElementById('song-cards')
 
+// const artistCard.appendChild(root)
 
 form.addEventListener('submit', (e) => {
     e.preventDefault()
+    document.getElementById('song-cards').innerHTML = ''
     console.log(input.value)
     fetch(url + input.value)
         .then((res) => res.json())
@@ -28,7 +30,7 @@ form.addEventListener('submit', (e) => {
                 <p>${song.collectionName}</p>
                 <p>${song.trackName}</p>
                 <audio controls src='${song.previewUrl}'></audio>
-                ` 
+                `
             }
         })
 })

@@ -10,7 +10,7 @@
 
 #song-cards {
     display: grid;
-    flex-direction: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
 }
 
 .artist-card {
